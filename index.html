@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daraz.pk - Online Shopping Pakistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-links">
+      <a href="#">Sell on Daraz</a>
+      <span>|</span>
+      <a href="#">Daraz App</a>
+      <span>|</span>
+      <a href="#">Track Order</a>
+      <span>|</span>
+      <a href="#">Help Center</a>
+    </div>
+    <div class="topbar-links">
+      <a href="#">🇵🇰 Pakistan</a>
+      <span>|</span>
+      <a href="#">Sign In</a>
+      <span>|</span>
+      <a href="#">Register</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-box">
+        <span class="logo-text">dar<span>az</span></span>
+      </div>
+    </a>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search in Daraz..." autocomplete="off">
+      <button class="search-btn" onclick="doSearch()">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      </button>
+    </div>
+
+    <div class="header-actions">
+      <a href="#" class="hdr-btn" onclick="openCart(event)">
+        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h14v-2H7.42a.25.25 0 0 1-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 23.45 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        <span>Cart <span id="cartBadge" class="cart-count" style="display:none">0</span></span>
+      </a>
+      <a href="#" class="hdr-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>Account</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-link active" href="#">🏠 Home</a>
+    <a class="nav-link" href="#">⚡ Flash Sale <span class="badge">LIVE</span></a>
+    <a class="nav-link" href="#">📱 Mobiles</a>
+    <a class="nav-link" href="#">👗 Fashion</a>
+    <a class="nav-link" href="#">💻 Electronics</a>
+    <a class="nav-link" href="#">🏠 Home & Living</a>
+    <a class="nav-link" href="#">💄 Beauty</a>
+    <a class="nav-link" href="#">🧸 Baby & Toys</a>
+    <a class="nav-link" href="#">🏋️ Sports</a>
+    <a class="nav-link" href="#">🛒 Grocery</a>
+    <a class="nav-link" href="#">🚗 Automotive</a>
+    <a class="nav-link" href="#">🎮 Gaming</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main-container">
+
+  <!-- HERO -->
+  <div class="hero-section">
+
+    <!-- Category Sidebar -->
+    <div class="cat-sidebar">
+      <div class="cat-item"><span><span class="cat-icon">📱</span>Mobiles & Tablets</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">💻</span>Computers</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">📷</span>Cameras</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">👗</span>Men's Fashion</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">👘</span>Women's Fashion</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">💄</span>Health & Beauty</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">🏠</span>Home & Living</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">🧸</span>Baby & Toys</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">🏋️</span>Sports & Outdoors</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">🔧</span>Tools & Hardware</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">📚</span>Books & Stationery</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cat-item"><span><span class="cat-icon">🚗</span>Automotive</span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner" id="heroBanner">
+      <div class="banner-slides" id="bannerSlides">
+        <!-- Slide 1 -->
+        <div class="banner-slide slide-1">
+          <div class="slide-deco deco1"></div>
+          <div class="slide-deco deco2"></div>
+          <div class="slide-deco deco3"></div>
+          <div class="slide-content">
+            <span class="slide-tag">🔥 Mega Sale</span>
+            <h2>Super Sale<br>Up to 70% OFF</h2>
+            <p>Exclusive deals on top brands</p>
+            <a href="#" class="slide-cta" onclick="addToCart(event,'Sale Item','Rs. 999')">Shop Now →</a>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="banner-slide slide-2">
+          <div class="slide-deco deco1"></div>
+          <div class="slide-deco deco2"></div>
+          <div class="slide-content">
+            <span class="slide-tag">📱 New Arrivals</span>
+            <h2>Latest Smartphones<br>Best Prices</h2>
+            <p>Samsung, iPhone, Xiaomi & more</p>
+            <a href="#" class="slide-cta" onclick="addToCart(event,'Smartphone','Rs. 45,999')">Explore →</a>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="banner-slide slide-3">
+          <div class="slide-deco deco1"></div>
+          <div class="slide-deco deco2"></div>
+          <div class="slide-content">
+            <span class="slide-tag">🛍️ Fashion Week</span>
+            <h2>Trendy Fashion<br>All Seasons</h2>
+            <p>Men's, Women's & Kids wear</p>
+            <a href="#" class="slide-cta" onclick="addToCart(event,'Fashion Item','Rs. 1,299')">Browse →</a>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="banner-slide slide-4">
+          <div class="slide-deco deco1"></div>
+          <div class="slide-deco deco2"></div>
+          <div class="slide-content">
+            <span class="slide-tag">🎮 Gaming Zone</span>
+            <h2>Level Up Your<br>Gaming Setup</h2>
+            <p>PS5, Xbox, Gaming PCs & more</p>
+            <a href="#" class="slide-cta" onclick="addToCart(event,'Gaming Item','Rs. 12,999')">Play Now →</a>
+          </div>
+        </div>
+      </div>
+      <button class="banner-arrow arrow-left" onclick="prevSlide()">&#8249;</button>
+      <button class="banner-arrow arrow-right" onclick="nextSlide()">&#8250;</button>
+      <div class="banner-dots" id="bannerDots">
+        <div class="dot active" onclick="goSlide(0)"></div>
+        <div class="dot" onclick="goSlide(1)"></div>
+        <div class="dot" onclick="goSlide(2)"></div>
+        <div class="dot" onclick="goSlide(3)"></div>
+      </div>
+    </div>
+
+    <!-- Right Promos -->
+    <div class="hero-promos">
+      <div class="promo-card pc1" onclick="addToCart(event,'Beauty Bundle','Rs. 599')">
+        <div><span class="emoji">💄</span>Beauty Sale<div class="label">Up to 50% OFF</div></div>
+      </div>
+      <div class="promo-card pc2" onclick="addToCart(event,'Electronics Deal','Rs. 2,499')">
+        <div><span class="emoji">⚡</span>Electronics<div class="label">Flash Deals</div></div>
+      </div>
+      <div class="promo-card pc3" onclick="addToCart(event,'Grocery Pack','Rs. 349')">
+        <div><span class="emoji">🛒</span>Grocery<div class="label">Daily Fresh</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="cats-strip">
+    <h2>Shop by Category</h2>
+    <div class="cats-grid">
+      <div class="cat-card" onclick="showToast('📱 Mobiles')"><div class="icon">📱</div><span>Mobiles</span></div>
+      <div class="cat-card" onclick="showToast('💻 Electronics')"><div class="icon">💻</div><span>Electronics</span></div>
+      <div class="cat-card" onclick="showToast('👗 Women Fashion')"><div class="icon">👗</div><span>Women Fashion</span></div>
+      <div class="cat-card" onclick="showToast('👔 Men Fashion')"><div class="icon">👔</div><span>Men Fashion</span></div>
+      <div class="cat-card" onclick="showToast('💄 Beauty')"><div class="icon">💄</div><span>Beauty</span></div>
+      <div class="cat-card" onclick="showToast('🏠 Home')"><div class="icon">🏠</div><span>Home & Living</span></div>
+      <div class="cat-card" onclick="showToast('🧸 Baby & Toys')"><div class="icon">🧸</div><span>Baby & Toys</span></div>
+      <div class="cat-card" onclick="showToast('🏋️ Sports')"><div class="icon">🏋️</div><span>Sports</span></div>
+      <div class="cat-card" onclick="showToast('🎮 Gaming')"><div class="icon">🎮</div><span>Gaming</span></div>
+      <div class="cat-card" onclick="showToast('📚 Books')"><div class="icon">📚</div><span>Books</span></div>
+      <div class="cat-card" onclick="showToast('🛒 Grocery')"><div class="icon">🛒</div><span>Grocery</span></div>
+      <div class="cat-card" onclick="showToast('🚗 Automotive')"><div class="icon">🚗</div><span>Automotive</span></div>
+    </div>
+  </div>
+
+  <!-- FLASH SALE -->
+  <div class="section">
+    <div class="section-header">
+      <h2>
+        <span class="flash-icon">⚡</span> Flash Sale
+        <div class="countdown">
+          <div class="time-unit" id="hours">04</div>
+          <span class="time-sep">:</span>
+          <div class="time-unit" id="minutes">32</div>
+          <span class="time-sep">:</span>
+          <div class="time-unit" id="seconds">00</div>
+        </div>
+      </h2>
+      <a href="#" class="see-all">See All →</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="addToCart(event,'Samsung Galaxy A55','Rs. 59,999')">
+        <div class="product-badge">-35%</div>
+        <div class="product-img">📱</div>
+        <div class="product-info">
+          <div class="product-name">Samsung Galaxy A55 5G 8GB RAM 256GB</div>
+          <div><span class="product-price">Rs. 59,999</span><span class="product-original">Rs. 89,999</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(2.3k)</span></div>
+          <div class="sold-bar"><div class="sold-fill" style="width:78%"></div></div>
+          <div class="sold-text">78% sold</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Apple AirPods Pro','Rs. 38,500')">
+        <div class="product-badge">-20%</div>
+        <div class="product-img">🎧</div>
+        <div class="product-info">
+          <div class="product-name">Apple AirPods Pro 2nd Generation</div>
+          <div><span class="product-price">Rs. 38,500</span><span class="product-original">Rs. 48,000</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(1.1k)</span></div>
+          <div class="sold-bar"><div class="sold-fill" style="width:55%"></div></div>
+          <div class="sold-text">55% sold</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Nike Air Max 270','Rs. 12,999')">
+        <div class="product-badge">-40%</div>
+        <div class="product-img">👟</div>
+        <div class="product-info">
+          <div class="product-name">Nike Air Max 270 Running Shoes</div>
+          <div><span class="product-price">Rs. 12,999</span><span class="product-original">Rs. 21,999</span></div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(856)</span></div>
+          <div class="sold-bar"><div class="sold-fill" style="width:92%"></div></div>
+          <div class="sold-text">92% sold</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Xiaomi Smart TV 43\"','Rs. 44,999')">
+        <div class="product-badge">-30%</div>
+        <div class="product-img">📺</div>
+        <div class="product-info">
+          <div class="product-name">Xiaomi Smart TV 43" 4K Ultra HD Android</div>
+          <div><span class="product-price">Rs. 44,999</span><span class="product-original">Rs. 64,999</span></div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(3.4k)</span></div>
+          <div class="sold-bar"><div class="sold-fill" style="width:63%"></div></div>
+          <div class="sold-text">63% sold</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Anker Power Bank','Rs. 3,499')">
+        <div class="product-badge">-25%</div>
+        <div class="product-img">🔋</div>
+        <div class="product-info">
+          <div class="product-name">Anker PowerCore 20000mAh Power Bank</div>
+          <div><span class="product-price">Rs. 3,499</span><span class="product-original">Rs. 4,699</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(4.1k)</span></div>
+          <div class="sold-bar"><div class="sold-fill" style="width:88%"></div></div>
+          <div class="sold-text">88% sold</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Gaming Headset','Rs. 4,999')">
+        <div class="product-badge">-45%</div>
+        <div class="product-img">🎮</div>
+        <div class="product-info">
+          <div class="product-name">HyperX Cloud II Gaming Headset RGB</div>
+          <div><span class="product-price">Rs. 4,999</span><span class="product-original">Rs. 9,099</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(987)</span></div>
+          <div class="sold-bar"><div class="sold-fill" style="width:71%"></div></div>
+          <div class="sold-text">71% sold</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MINI BANNERS -->
+  <div class="banner-row">
+    <div class="mini-banner mb1" onclick="showToast('🔶 Daraz Mall')"><span class="emoji">🏪</span>Daraz Mall<br><small style="font-weight:400;font-size:11px">Authentic Brands</small></div>
+    <div class="mini-banner mb2" onclick="showToast('🔴 7.7 Sale')"><span class="emoji">🎉</span>7.7 Mega Sale<br><small style="font-weight:400;font-size:11px">Coming Soon</small></div>
+    <div class="mini-banner mb3" onclick="showToast('🔵 Free Shipping')"><span class="emoji">🚚</span>Free Shipping<br><small style="font-weight:400;font-size:11px">On orders above Rs. 500</small></div>
+    <div class="mini-banner mb4" onclick="showToast('🟢 Daraz Pay')"><span class="emoji">💳</span>Daraz Pay<br><small style="font-weight:400;font-size:11px">Easy Installments</small></div>
+  </div>
+
+  <!-- TOP PICKS -->
+  <div class="section">
+    <div class="section-header">
+      <h2>🛍️ Top Picks For You</h2>
+      <a href="#" class="see-all">See All →</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="addToCart(event,'Laptop Bag','Rs. 1,899')">
+        <div class="product-badge">New</div>
+        <div class="product-img">💼</div>
+        <div class="product-info">
+          <div class="product-name">Laptop Backpack 15.6" Waterproof USB</div>
+          <div><span class="product-price">Rs. 1,899</span><span class="product-original">Rs. 2,499</span></div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(612)</span></div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Perfume Set','Rs. 2,199')">
+        <div class="product-badge">Hot</div>
+        <div class="product-img">🌸</div>
+        <div class="product-info">
+          <div class="product-name">Luxury Perfume Gift Set Men Women 100ml</div>
+          <div><span class="product-price">Rs. 2,199</span><span class="product-original">Rs. 3,500</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(1.8k)</span></div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Smart Watch','Rs. 4,499')">
+        <div class="product-badge">-50%</div>
+        <div class="product-img">⌚</div>
+        <div class="product-info">
+          <div class="product-name">Smart Watch Fitness Tracker Heart Rate</div>
+          <div><span class="product-price">Rs. 4,499</span><span class="product-original">Rs. 8,999</span></div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(2.2k)</span></div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Coffee Maker','Rs. 6,999')">
+        <div class="product-badge">-15%</div>
+        <div class="product-img">☕</div>
+        <div class="product-info">
+          <div class="product-name">Automatic Espresso Coffee Maker Machine</div>
+          <div><span class="product-price">Rs. 6,999</span><span class="product-original">Rs. 8,199</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(445)</span></div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Gym Shoes','Rs. 3,299')">
+        <div class="product-img">🏃</div>
+        <div class="product-info">
+          <div class="product-name">Adidas Running Sports Shoes Men</div>
+          <div><span class="product-price">Rs. 3,299</span><span class="product-original">Rs. 5,500</span></div>
+          <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-count">(733)</span></div>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(event,'Rice Cooker','Rs. 2,799')">
+        <div class="product-img">🍚</div>
+        <div class="product-info">
+          <div class="product-name">Philips Rice Cooker 1.8L Non-Stick</div>
+          <div><span class="product-price">Rs. 2,799</span><span class="product-original">Rs. 3,999</span></div>
+          <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-count">(921)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JUST FOR YOU -->
+  <div class="section">
+    <div class="section-header">
+      <h2>✨ Just For You</h2>
+      <a href="#" class="see-all">More →</a>
+    </div>
+    <div class="jfy-grid">
+      <div class="jfy-card" onclick="addToCart(event,'Baby Stroller','Rs. 8,500')">
+        <div class="jfy-img">🍼</div>
+        <div class="jfy-info"><div class="jfy-name">Baby Stroller Foldable Lightweight Travel</div><div><span class="jfy-price">Rs. 8,500</span><span class="jfy-original">Rs. 12,000</span></div></div>
+      </div>
+      <div class="jfy-card" onclick="addToCart(event,'Bluetooth Speaker','Rs. 2,499')">
+        <div class="jfy-img">🔊</div>
+        <div class="jfy-info"><div class="jfy-name">JBL Go 3 Portable Bluetooth Speaker</div><div><span class="jfy-price">Rs. 2,499</span><span class="jfy-original">Rs. 3,999</span></div></div>
+      </div>
+      <div class="jfy-card" onclick="addToCart(event,'Yoga Mat','Rs. 899')">
+        <div class="jfy-img">🧘</div>
+        <div class="jfy-info"><div class="jfy-name">Non-Slip Yoga Mat Extra Thick 6mm</div><div><span class="jfy-price">Rs. 899</span><span class="jfy-original">Rs. 1,499</span></div></div>
+      </div>
+      <div class="jfy-card" onclick="addToCart(event,'Skincare Kit','Rs. 1,299')">
+        <div class="jfy-img">🧴</div>
+        <div class="jfy-info"><div class="jfy-name">Neutrogena Skincare Routine Kit</div><div><span class="jfy-price">Rs. 1,299</span><span class="jfy-original">Rs. 2,000</span></div></div>
+      </div>
+      <div class="jfy-card" onclick="addToCart(event,'Dumbbell Set','Rs. 3,499')">
+        <div class="jfy-img">🏋️</div>
+        <div class="jfy-info"><div class="jfy-name">Adjustable Dumbbell Set 5-25kg Fitness</div><div><span class="jfy-price">Rs. 3,499</span><span class="jfy-original">Rs. 5,000</span></div></div>
+      </div>
+      <div class="jfy-card" onclick="addToCart(event,'Book Bundle','Rs. 799')">
+        <div class="jfy-img">📚</div>
+        <div class="jfy-info"><div class="jfy-name">Bestseller Books Bundle (3 Books Set)</div><div><span class="jfy-price">Rs. 799</span><span class="jfy-original">Rs. 1,200</span></div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main-container -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-col">
+      <h4>About Daraz</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Policies</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Track My Order</a></li>
+        <li><a href="#">How to Return</a></li>
+        <li><a href="#">Report a Product</a></li>
+        <li><a href="#">Chat with Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sell on Daraz</h4>
+      <ul>
+        <li><a href="#">Seller Center</a></li>
+        <li><a href="#">Daraz University</a></li>
+        <li><a href="#">Seller Policies</a></li>
+        <li><a href="#">Flash Sale Campaign</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Daraz App</h4>
+      <ul>
+        <li><a href="#">Download iOS App</a></li>
+        <li><a href="#">Download Android App</a></li>
+        <li><a href="#">Daraz Mall</a></li>
+        <li><a href="#">Daraz Pay</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links" style="margin-bottom:14px;">
+        <a class="social-link" href="#" title="Facebook">f</a>
+        <a class="social-link" href="#" title="Instagram">in</a>
+        <a class="social-link" href="#" title="Twitter">X</a>
+        <a class="social-link" href="#" title="YouTube">▶</a>
+      </div>
+      <h4 style="margin-top:14px;">Payment Methods</h4>
+      <div class="payment-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">COD</span>
+        <span class="pay-icon">EJ</span>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <div class="footer-logo">dar<span>az</span></div>
+    <p>© 2024 Daraz – An Alibaba Company. All rights reserved.</p>
+    <div>
+      <a href="#" style="color:#666;font-size:12px;margin-right:12px;">Privacy Policy</a>
+      <a href="#" style="color:#666;font-size:12px;margin-right:12px;">Terms of Use</a>
+      <a href="#" style="color:#666;font-size:12px;">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCartOnOverlay(event)">
+  <div class="cart-panel">
+    <div class="cart-header">
+      🛒 My Cart (<span id="cartCount">0</span>)
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty">
+        <div class="big-icon">🛒</div>
+        <p>Your cart is empty</p>
+        <small>Add items to get started</small>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal" style="color:var(--orange)">Rs. 0</span>
+      </div>
+      <button class="checkout-btn" onclick="showToast('✅ Proceeding to checkout...')">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="t-icon">✅</span>
+  <span id="toastMsg">Added to cart!</span>
+</div>
+
+<script>
+  // ── Banner Slider ──
+  let currentSlide = 0;
+  const totalSlides = 4;
+  let autoSlide;
+
+  function goSlide(n) {
+    currentSlide = n;
+    document.getElementById('bannerSlides').style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+  function nextSlide() { goSlide((currentSlide + 1) % totalSlides); resetAuto(); }
+  function prevSlide() { goSlide((currentSlide - 1 + totalSlides) % totalSlides); resetAuto(); }
+  function resetAuto() { clearInterval(autoSlide); autoSlide = setInterval(nextSlide, 4000); }
+  autoSlide = setInterval(nextSlide, 4000);
+
+  // ── Countdown Timer ──
+  let endTime = Date.now() + (4 * 3600 + 32 * 60) * 1000;
+  function updateCountdown() {
+    const diff = Math.max(0, endTime - Date.now());
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('hours').textContent   = String(h).padStart(2,'0');
+    document.getElementById('minutes').textContent = String(m).padStart(2,'0');
+    document.getElementById('seconds').textContent = String(s).padStart(2,'0');
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // ── Cart ──
+  let cart = [];
+
+  function addToCart(e, name, price) {
+    e.preventDefault();
+    const existing = cart.find(i => i.name === name);
+    if (existing) { existing.qty++; }
+    else { cart.push({ name, price, qty: 1 }); }
+    renderCart();
+    showToast(`🛒 "${name}" added to cart!`);
+  }
+
+  function renderCart() {
+    const total = cart.reduce((s, i) => s + i.qty, 0);
+    document.getElementById('cartCount').textContent = total;
+    const badge = document.getElementById('cartBadge');
+    badge.textContent = total;
+    badge.style.display = total ? 'inline' : 'none';
+
+    const body = document.getElementById('cartBody');
+    const footer = document.getElementById('cartFooter');
+
+    if (!cart.length) {
+      body.innerHTML = `<div class="cart-empty"><div class="big-icon">🛒</div><p>Your cart is empty</p><small>Add items to get started</small></div>`;
+      footer.style.display = 'none';
+      return;
+    }
+
+    let totalPrice = 0;
+    body.innerHTML = cart.map((item, idx) => {
+      const numPrice = parseInt(item.price.replace(/[^0-9]/g,''));
+      totalPrice += numPrice * item.qty;
+      return `<div class="cart-item">
+        <div class="cart-item-img">${getEmoji(item.name)}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">${item.price}</div>
+          <div class="cart-qty">
+            <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    document.getElementById('cartTotal').textContent = 'Rs. ' + totalPrice.toLocaleString();
+    footer.style.display = 'block';
+  }
+
+  function getEmoji(name) {
+    const map = {'Samsung':'📱','Apple':'🎧','Nike':'👟','Xiaomi':'📺','Anker':'🔋','Gaming':'🎮','Laptop':'💼','Perfume':'🌸','Smart':'⌚','Coffee':'☕','Gym':'🏃','Rice':'🍚','Baby':'🍼','Bluetooth':'🔊','Yoga':'🧘','Skincare':'🧴','Dumbbell':'🏋️','Book':'📚','Fashion':'👗','Electronics':'⚡','Grocery':'🛒','Sale':'🛍️','Beauty':'💄'};
+    for (const k in map) if (name.includes(k)) return map[k];
+    return '📦';
+  }
+
+  function changeQty(idx, delta) {
+    cart[idx].qty += delta;
+    if (cart[idx].qty <= 0) cart.splice(idx, 1);
+    renderCart();
+  }
+
+  function openCart(e) { e.preventDefault(); document.getElementById('cartOverlay').classList.add('open'); }
+  function closeCart() { document.getElementById('cartOverlay').classList.remove('open'); }
+  function closeCartOnOverlay(e) { if (e.target === document.getElementById('cartOverlay')) closeCart(); }
+
+  // ── Toast ──
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  // ── Search ──
+  function doSearch() {
+    const q = document.getElementById('searchInput').value.trim();
+    if (q) showToast(`🔍 Searching for "${q}"...`);
+  }
+  document.getElementById('searchInput').addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+</script>
+</body>
+</html>
